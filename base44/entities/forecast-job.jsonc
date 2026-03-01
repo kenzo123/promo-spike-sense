@@ -1,0 +1,54 @@
+{
+  "name": "ForecastJob",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID of the user who created this job"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "processing",
+        "done",
+        "error"
+      ],
+      "default": "pending",
+      "description": "Current status of the forecast job"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the job completed"
+    },
+    "model_used": {
+      "type": "string",
+      "description": "ML model used for forecasting"
+    },
+    "sku_count": {
+      "type": "number",
+      "description": "Total number of SKUs processed"
+    },
+    "degraded_sku_count": {
+      "type": "number",
+      "description": "SKUs with degraded forecast quality"
+    },
+    "result_json": {
+      "type": "string",
+      "description": "JSON string of forecast results"
+    },
+    "file_name": {
+      "type": "string",
+      "description": "Original uploaded file name"
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Error details if status is error"
+    }
+  },
+  "required": [
+    "user_id",
+    "status"
+  ]
+}

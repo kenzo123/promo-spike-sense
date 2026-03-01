@@ -1,0 +1,89 @@
+{
+  "name": "UserSettings",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User"
+    },
+    "weather_lat": {
+      "type": "number",
+      "default": 48.85,
+      "description": "Latitude for weather context"
+    },
+    "weather_lon": {
+      "type": "number",
+      "default": 2.35,
+      "description": "Longitude for weather context"
+    },
+    "trend_keywords": {
+      "type": "string",
+      "description": "JSON array of trend keywords to monitor"
+    },
+    "slack_webhook_url": {
+      "type": "string",
+      "description": "Slack webhook URL for notifications"
+    },
+    "notification_email": {
+      "type": "string",
+      "description": "Email for alert notifications"
+    },
+    "email_alerts_enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether email spike alerts are enabled"
+    },
+    "platform": {
+      "type": "string",
+      "enum": [
+        "shopify",
+        "amazon",
+        "woocommerce",
+        "other"
+      ],
+      "description": "E-commerce platform"
+    },
+    "niche": {
+      "type": "string",
+      "enum": [
+        "fashion",
+        "beauty",
+        "dropshipping",
+        "electronics",
+        "other"
+      ],
+      "description": "Business niche"
+    },
+    "gdpr_consent": {
+      "type": "boolean",
+      "default": false,
+      "description": "GDPR consent given"
+    },
+    "gdpr_consent_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When consent was given"
+    },
+    "gdpr_deletion_requested_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When deletion was requested"
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "free",
+        "pro"
+      ],
+      "default": "free",
+      "description": "User subscription plan"
+    },
+    "stripe_customer_id": {
+      "type": "string",
+      "description": "Stripe customer ID"
+    }
+  },
+  "required": [
+    "user_id"
+  ]
+}

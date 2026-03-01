@@ -1,0 +1,55 @@
+{
+  "name": "Alert",
+  "type": "object",
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "description": "Reference to ForecastJob"
+    },
+    "sku_id": {
+      "type": "string",
+      "description": "SKU identifier"
+    },
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "spike",
+        "risk"
+      ],
+      "description": "Type of alert"
+    },
+    "day_offset": {
+      "type": "number",
+      "description": "Day offset from today (1-14)"
+    },
+    "pct_change": {
+      "type": "number",
+      "description": "Percentage change forecasted"
+    },
+    "qty_suggested": {
+      "type": "number",
+      "description": "Suggested quantity to order/prepare"
+    },
+    "explanation": {
+      "type": "string",
+      "description": "Human-readable explanation of the alert"
+    },
+    "user_rating": {
+      "type": "number",
+      "description": "User rating (1-5) for alert accuracy"
+    },
+    "sku_name": {
+      "type": "string",
+      "description": "Human-readable SKU name"
+    },
+    "confidence": {
+      "type": "number",
+      "description": "Confidence score 0-1"
+    }
+  },
+  "required": [
+    "job_id",
+    "sku_id",
+    "alert_type"
+  ]
+}
